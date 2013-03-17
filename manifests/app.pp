@@ -16,13 +16,21 @@ package{'vim':
     ensure  => present
 }
 
+package{'curl':
+    ensure  => present
+}
+
+package{'acl':
+    ensure  => present
+}
+
 class { "apache": }
 apache::module {'rewrite': }
 apache::module {'env': }
 apache::module {'deflate': }
 apache::module {'expires': }
 
-class { "mysql": }
+class { "mysql": root_password => root }
 
 class { 'php': }
 php::module { "cli": }
@@ -73,6 +81,18 @@ exec { 'install-phpdocumentor':
     command => "/usr/bin/pear install pear.phpdoc.org/phpDocumentor-alpha --alldeps",
     require => [Php::Module['cli'], Exec['pear-auto-discover'], Exec['pear-update']]
 }
+
+exec { 'create dir':
+    path => '/usr/bin:/usr/sbin:/bin',
+    command => "mkdir -p /home/vagrant/code/web"
+}
+
+#download composer
+exec { 'download-composer':
+    path => '/usr/bin:/usr/sbin:/bin',
+    command => 'curl -s https://getcomposer.org/installer | php -- --install-dir=/home/vagrant/code/web'    
+}
+
 
 file { 'php_apachephpini':
     path    => '/etc/php5/apache2/php.ini',
