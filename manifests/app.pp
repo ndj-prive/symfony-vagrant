@@ -101,7 +101,7 @@ exec { 'download-composer':
 
 exec { 'download-symfony2':
     path => '/usr/bin:/usr/sbin:/bin',
-    command => 'php /home/vagrant/code/web/composer.phar create-project symfony/framework-standard-edition /home/vagrant/code/web/project',
+    command => 'php /home/vagrant/code/web/composer.phar create-project symfony-cmf/standard-edition /home/vagrant/code/web/project',
     require => Php::Module['cli']
 }
 
