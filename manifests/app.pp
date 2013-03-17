@@ -87,10 +87,14 @@ exec { 'create dir':
     command => "mkdir -p /home/vagrant/code/web"
 }
 
-#download composer
 exec { 'download-composer':
     path => '/usr/bin:/usr/sbin:/bin',
     command => 'curl -s https://getcomposer.org/installer | php -- --install-dir=/home/vagrant/code/web'    
+}
+
+exec { 'download-symfony2':
+    path => '/usr/bin:/usr/sbin:/bin',
+    command => 'php /home/vagrant/code/web/composer.phar create-project symfony/framework-standard-edition /home/vagrant/code/web/project'
 }
 
 
