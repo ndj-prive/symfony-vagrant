@@ -24,15 +24,20 @@ package{'acl':
     ensure  => present
 }
 
-class { "apache": }
+class { "apache": 
+    require => Exec["apt-get-update"],
+}
 apache::module {'rewrite': }
 apache::module {'env': }
 apache::module {'deflate': }
 apache::module {'expires': }
 
-class { "mysql": root_password => root }
+class { "mysql": 
+    root_password => root,
+        require => Exec["apt-get-update"],
+}
 
-class { 'php': }
+class { 'php':     require => Exec["apt-get-update"]}
 php::module { "cli": }
 php::module { "curl": }
 php::module { "intl": }
@@ -82,22 +87,25 @@ exec { 'install-phpdocumentor':
     require => [Php::Module['cli'], Exec['pear-auto-discover'], Exec['pear-update']]
 }
 
-exec { 'create dir':
+exec { 'create-dir':
     path => '/usr/bin:/usr/sbin:/bin',
-    command => "mkdir -p /home/vagrant/code/web"
+    command => "mkdir -p /home/vagrant/code/web",
+    unless => "[ -d '/home/vagrant/code/web' ]"
 }
 
 #download composer
 exec { 'download-composer':
     path => '/usr/bin:/usr/sbin:/bin',
-    command => 'curl -s https://getcomposer.org/installer | php -- --install-dir=/home/vagrant/code/web'    
+    command => 'curl -s https://getcomposer.org/installer | php -- --install-dir=/home/vagrant/code/web',
+    require => [Package['curl'],Php::Module['cli'],Exec['create-dir']]
 }
 
 
 file { 'php_apachephpini':
     path    => '/etc/php5/apache2/php.ini',
     ensure  => present,
-    source  => '/home/vagrant/code/resources/php.ini'
+    source  => '/home/vagrant/code/resources/php.ini',
+    require => Php::Module['cli']
 }
 
 file 
@@ -117,5 +125,6 @@ file
 file {'apache2.default-vhost':
     path    => '/etc/apache2/sites-available/default',
     ensure  => present,
-    source  => '/home/vagrant/code/resources/apache2-default-vhost'
+    source  => '/home/vagrant/code/resources/apache2-default-vhost',
+    require => Php::Module['cli']
 }
