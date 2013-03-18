@@ -51,7 +51,8 @@ SSH into your new vagrantbox
 
 enjoy
 
-Original developed by: 
-	https://github.com/ftassi
+Sorry for the windows users, if someone can test this on a windows machine and provide 
+the correct text i will update the quickstart.
 
-	https://github.com/example42
+Original developed by: 
+	https://github.com/ftassi and https://github.com/example42
