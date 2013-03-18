@@ -1,28 +1,29 @@
-symfony-vagrant
-===============
+Symfony-vagrant
+---------------
 
 Vagrant + puppet configuration for Symfony project
 
 [Draft]
 -------
 
-Requirements: 
-_____________	
+**Requirements:** 
+
 	ruby, vagrant, virtualbox
 
-Install ruby:
+**Install ruby:**
 
 	$ sudo apt-get install ruby or $ brew install ruby
 
-Donwload and install virtualbox:
+**Donwload and install virtualbox:**
 
 	url: https://www.virtualbox.org/
 
-Install vagrant:
+**Install vagrant:**
 
 	$ gem install vagrant
 
-Time to rock:
+Time to rock
+------------
 
 Download the vagrant repo.
 
@@ -52,4 +53,5 @@ enjoy
 
 Original developed by: 
 	https://github.com/ftassi
+
 	https://github.com/example42
