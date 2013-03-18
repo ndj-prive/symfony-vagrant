@@ -3,7 +3,8 @@ Symfony-vagrant
 
 Vagrant + puppet configuration for PHP projects.
   - supported frameworks:
-    - Symfony
+    - Symfony2
+      - composer.phar is allready donwloaded
     - Drupal   <-- TODO
     - Wordpress<-- TODO
 
