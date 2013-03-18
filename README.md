@@ -4,9 +4,11 @@ Symfony-vagrant
 Vagrant + puppet configuration for PHP projects.
   - supported frameworks:
     - Symfony2
-      - composer.phar is allready donwloaded
-    - Drupal   <-- TODO
-    - Wordpress<-- TODO
+      - composer.phar is already downloaded
+      - use this folder in the vm /home/vagrant/code/web
+         to host your development site
+    - Drupal    <-- TODO
+    - Wordpress <-- TODO
 
 [Draft]
 -------
@@ -62,7 +64,7 @@ TODO:
   - Add wordpress support
 
 Sorry for the windows users, if someone can test this on a windows machine and provide 
-the correct text i will update the quickstart.
+the correct text i will update the quick start.
 
 
 Original developed by: 
