@@ -4,9 +4,10 @@ symfony-vagrant
 Vagrant + puppet configuration for Symfony project
 
 [Draft]
+-------
 
 Requirements: 
-	
+_____________	
 	ruby, vagrant, virtualbox
 
 Install ruby:
