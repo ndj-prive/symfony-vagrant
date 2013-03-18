@@ -22,15 +22,31 @@ $ gem install vagrant
 Time to rock:
 
 Download the vagrant repo.
-$ git clone git@github.com:ndj-prive/symfony-vagrant.git <project-name>
+
+	`$ git clone git@github.com:ndj-prive/symfony-vagrant.git <project-name>
+
 Move into the downloaded folder
-$ cd <project-name>
+
+	`$ cd <project-name>`
+
 Let our local git repo know we have submodules
-$ git submodule update --init
+
+    `$ git submodule update --init`
+
 Download the submodules in one line
-$ git submodule update --recursive
+
+	`$ git submodule update --recursive`
+
 Vagrant time
-$ vagrant up
+
+	`$ vagrant up`
+
 SSH into your new vagrantbox
-vagrant ssh
+
+	`vagrant ssh`
+
 enjoy
+
+Original developed by: 
+https://github.com/ftassi
+https://github.com/example42
