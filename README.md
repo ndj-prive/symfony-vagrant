@@ -1,7 +1,11 @@
 Symfony-vagrant
 ---------------
 
-Vagrant + puppet configuration for Symfony project
+Vagrant + puppet configuration for PHP projects.
+  - supported frameworks:
+    - Symfony
+    - Drupal   <-- TODO
+    - Wordpress<-- TODO
 
 [Draft]
 -------
@@ -51,8 +55,14 @@ SSH into your new vagrantbox
 
 enjoy
 
+
+TODO:
+  - Add support for drush and drupal
+  - Add wordpress support
+
 Sorry for the windows users, if someone can test this on a windows machine and provide 
 the correct text i will update the quickstart.
+
 
 Original developed by: 
 	https://github.com/ftassi and https://github.com/example42
