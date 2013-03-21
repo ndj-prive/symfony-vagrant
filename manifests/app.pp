@@ -40,6 +40,7 @@ class { "mysql":
 class { 'php':     require => Exec["apt-get-update"]}
 php::module { "cli": }
 php::module { "curl": }
+php::module { "mcrypt": }
 php::module { "intl": }
 php::module { "sqlite": }
 php::module { "apc": 
