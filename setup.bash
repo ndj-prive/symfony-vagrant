@@ -36,5 +36,7 @@ echo "    CustomLog /var/log/apache2/access.log combined" >> "$PROJECTNAME"
 echo "" >> "$PROJECTNAME"
 echo "</VirtualHost>" >> "$PROJECTNAME"
 
+git clone git://github.com/ndj-prive/git.git git-hooks
+
 cd vagrant
 vagrant up
