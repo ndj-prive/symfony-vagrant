@@ -46,7 +46,7 @@ php::module { "sqlite": }
 php::module { "apc": 
   module_prefix => "php-"
 }
-php::module { "pear": 
+php::module { "pear":
   module_prefix => "php-"
 }
 php::module { "xdebug": }
