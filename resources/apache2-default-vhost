@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+ <VirtualHost *:80>
     SetEnv FLATCLUB_ENV dev
     SetEnv FLATCLUB_DEBUG true
     ServerAdmin webmaster@localhost
